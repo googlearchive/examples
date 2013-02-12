@@ -25,7 +25,7 @@
   // Get a reference to my own presence status.
   var connectedRef = new Firebase("http://presence.firebaseio-demo.com/.info/connected");
   connectedRef.on("value", function(isOnline) {
-    if (isOnline) {
+    if (isOnline.val()) {
       // If we lose our internet connection, we want ourselves removed from the list.
       myUserRef.onDisconnect().remove();
 
