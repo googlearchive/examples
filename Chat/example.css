@@ -1,3 +1,4 @@
+
 #clear {
   float:center;
   -webkit-border-radius: 5px;
@@ -67,25 +68,22 @@ em {
   color: black;
 }
 
-/* Drawing */
-
-#colorholder {
-  width: 480px;
-  height: 30px;
-  border: 2px solid #424547;
-  margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
+/* Chat */
+#messagesDiv {
+  background-color: white;
+  overflow: auto;
+  height: 230px;
+  width: 100%;
+  padding: 10px;
+  border: 8px solid #424547;
+  margin-bottom: 5px;
+  text-align: left;
 }
 
-#drawing-canvas {
-  border: 3px solid #999
+#nameInput {
+  width: 26%;
 }
 
-.colorbox {
-  width: 22px;
-  height: 22px;
-  margin: 1px;
-  display: inline-block;
-  border: 3px solid black;
+#messageInput {
+  width: 68%;
 }
