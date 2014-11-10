@@ -1,0 +1,50 @@
+/* Global */
+body {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  background-color: #f8f8f8;
+  font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #424547;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #424547;
+}
+
+h3 {
+  font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #424547;
+}
+
+p {
+ font-size: 16px;
+}
+
+input {
+  font-size: 24px;
+}
+
+input[type=text] {
+  color: #424547;
+  border: 1px solid #c2c2c2;
+  background-color: white;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+}
+
+/* Presence */
+#presenceDiv {
+  text-align: center;
+}
