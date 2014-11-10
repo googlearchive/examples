@@ -7,7 +7,7 @@
 
       "$pixel": {
         // The key name must have the format "##:##" and the value must be a string of three characters
-        ".validate": "$pixel.matches(/^\\d{1,2}:\\d{1,2}$/) && newData.isString() && newData.val().length === 3",
+        ".validate": "$pixel.matches(/^\\d{1,2}:\\d{1,2}$/) && newData.isString() && newData.val().length === 3"
       }
     }
   }

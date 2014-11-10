@@ -51,11 +51,6 @@
         "$other": {
           ".validate": false
         }
-      },
-
-      // No other children are allowed
-      "$other": {
-        ".validate": false
       }
     }
   }

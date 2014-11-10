@@ -15,7 +15,7 @@
         },
 
         // "status" must be a string
-        "score": {
+        "status": {
           ".validate": "newData.isString()"
         },
 
