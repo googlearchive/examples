@@ -7,7 +7,7 @@
 
       "$player": {
         // The parent key name must be "player0" or "player1" and each user must contain "board", "piece", and "restart"
-        ".validate": "($player === 'player0' || $player === 'player1') && newData.hasChildren(['board', 'piece', 'restart'])",
+        ".validate": "($player === 'player0' || $player === 'player1')",
 
         // "online" must be a boolean
         "online": {
@@ -44,7 +44,7 @@
 
         // "restart" must be an incrementing number
         "restart": {
-          ".validate": "newData.isNumber() && ((data.val() === null && newData.val() === 0) || (newData.val() === data.val() + 1))"
+          ".validate": "newData.isNumber()"
         },
 
         // No other children are allowed
