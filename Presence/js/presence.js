@@ -31,7 +31,6 @@ $(function() {
 
   // A helper function to let us set our own state.
   function setUserStatus(status) {
-    console.log(status);
     // Set our status in the list of online users.
     currentStatus = status;
     myUserRef.set({ name: name, status: status });
@@ -40,7 +39,6 @@ $(function() {
   // Update our GUI to show someone"s online status.
   userListRef.on("child_added", function(snapshot) {
     var user = snapshot.val();
-    console.log("user1:", user);
     $("#presenceDiv").append($("<div/>").attr("id", snapshot.key()));
     $("#" + snapshot.key()).text(user.name + " is currently " + user.status);
   });
@@ -53,7 +51,6 @@ $(function() {
   // Update our GUI to change a user"s status.
   userListRef.on("child_changed", function(snapshot) {
     var user = snapshot.val();
-    console.log("user2:", user);
     $("#" + snapshot.key()).text(user.name + " is currently " + user.status);
   });
 
