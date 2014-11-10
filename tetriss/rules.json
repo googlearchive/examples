@@ -42,7 +42,7 @@
           }
         },
 
-        // "restart" must be an incrementing number
+        // "restart" must be a number
         "restart": {
           ".validate": "newData.isNumber()"
         },
