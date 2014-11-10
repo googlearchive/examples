@@ -1,0 +1,41 @@
+{
+  "rules": {
+    // Let everyone read and write to the "leaderboard" node
+    "leaderboard": {
+      ".read": true,
+      ".write": true,
+
+      // The highest score must be a number
+      "highestScore": {
+        ".validate": "newData.isNumber()"
+      },
+
+      "scoreList": {
+        "$name": {
+          // Each score must contain a "name" and "text"
+          ".validate": "newData.hasChildren(['name', 'score'])",
+
+          // "name" must be a string
+          "name": {
+            ".validate": "newData.isString()"
+          },
+
+          // "score" must be a number
+          "score": {
+            ".validate": "newData.isNumber()"
+          },
+
+          // No other children are allowed
+          "$other": {
+            ".validate": false
+          }
+        }
+      },
+
+      // No other children are allowed
+      "$other": {
+        ".validate": false
+      }
+    }
+  }
+}

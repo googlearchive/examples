@@ -1,0 +1,29 @@
+{
+  "rules": {
+    // Let everyone read and write to the "chat" node
+    "chat": {
+      ".read": true,
+      ".write": true,
+
+      "$message": {
+        // Existing messages cannot be overwritten and each message must contain a "name" and "text"
+        ".validate": "!data.exists() && newData.hasChildren(['name', 'text'])",
+
+        // "name" must be a string
+        "name": {
+          ".validate": "newData.isString()"
+        },
+
+        // "text" must be a string
+        "text": {
+          ".validate": "newData.isString()"
+        },
+
+        // No other children are allowed
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "rules": {
+    // Let everyone read and write to the "presence" node
+    "presence": {
+      ".read": true,
+      ".write": true,
+
+      "$user": {
+        // Each user must contain a "name" and "status"
+        ".validate": "newData.hasChildren(['name', 'status'])",
+
+        // "name" must be a string
+        "name": {
+          ".validate": "newData.isString()"
+        },
+
+        // "status" must be a string
+        "score": {
+          ".validate": "newData.isString()"
+        },
+
+        // No other children are allowed
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

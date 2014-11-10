@@ -1,0 +1,62 @@
+{
+  "rules": {
+    // Let everyone read and write to the "tetris" node
+    "tetris": {
+      ".read": true,
+      ".write": true,
+
+      "$player": {
+        // The parent key name must be "player0" or "player1" and each user must contain "board", "piece", and "restart"
+        ".validate": "($player === 'player0' || $player === 'player1') && newData.hasChildren(['board', 'piece', 'restart'])",
+
+        // "online" must be a boolean
+        "online": {
+          ".validate": "newData.isBoolean()"
+        },
+
+        // "board" must be a list of strings representing each line
+        "board": {
+          "$lineNum": {
+            ".validate": "$lineNum.length === 2 && newData.isString() && newData.val().length === 10"
+          }
+        },
+
+        // "piece" must contain a bunch of numeric fields
+        "piece": {
+          "pieceNum": {
+            ".validate": "newData.isNumber()"
+          },
+          "rotation": {
+            ".validate": "newData.isNumber()"
+          },
+          "x": {
+            ".validate": "newData.isNumber()"
+          },
+          "y": {
+            ".validate": "newData.isNumber()"
+          },
+
+          // No other children are allowed
+          "$other": {
+            ".validate": false
+          }
+        },
+
+        // "restart" must be an incrementing number
+        "restart": {
+          ".validate": "newData.isNumber() && ((data.val() === null && newData.val() === 0) || (newData.val() === data.val() + 1))"
+        },
+
+        // No other children are allowed
+        "$other": {
+          ".validate": false
+        }
+      },
+
+      // No other children are allowed
+      "$other": {
+        ".validate": false
+      }
+    }
+  }
+}

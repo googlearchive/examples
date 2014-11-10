@@ -1,0 +1,14 @@
+{
+  "rules": {
+    // Let everyone read and write to the "drawing" node
+    "drawing": {
+      ".read": true,
+      ".write": true,
+
+      "$pixel": {
+        // The key name must have the format "##:##" and the value must be a string of three characters
+        ".validate": "$pixel.matches(/^\\d{1,2}:\\d{1,2}$/) && newData.isString() && newData.val().length === 3",
+      }
+    }
+  }
+}
